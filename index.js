@@ -26,15 +26,13 @@ app.get("/", function (req, res) {
 });
 
 app.post("/subscription", async function (req, res) {
+
   const getBrowserPage = initGetBrowserPage();
   const browser = (await getBrowserPage).browser;
   const page = (await getBrowserPage).page;
 
   try {
-
-
     const searchValue =  "Messi";
-
 
     await page.goto("https://www.youtube.com/user/YouTube/videos?app=desktop", {
       waitUntil: "networkidle2",
